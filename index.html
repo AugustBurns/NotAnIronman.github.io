@@ -1,9 +1,38 @@
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runeapp</title>
+  <style>
+    /* Style for the rectangle */
+    .rectangle {
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      border: 2px solid black;
+      cursor: pointer; /* Change cursor to pointer when hovering over the rectangle */
+    }
+  </style>
+</head>
+<body>
+
+<div class="rectangle" onclick="toggleColor(this)"></div>
+
+<script>
+  function toggleColor(element) {
+    // Check if the element has the class 'green'
+    if (element.classList.contains('green')) {
+      // If it has, remove the class and change background to white
+      element.classList.remove('green');
+      element.style.backgroundColor = 'white';
+    } else {
+      // If it hasn't, add the class and change background to green
+      element.classList.add('green');
+      element.style.backgroundColor = 'green';
+    }
+  }
+</script>
+
+</body>
 </html>
