@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Runeapp</title>
   <style>
+    /* Style for the rectangle container */
+    .rectangle-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
     /* Style for the rectangle */
     .rectangle {
       width: 100px;
@@ -12,12 +20,30 @@
       background-color: white;
       border: 2px solid black;
       cursor: pointer; /* Change cursor to pointer when hovering over the rectangle */
+      margin-bottom: 10px;
+      position: relative; /* Position relative for absolute positioning of text */
+    }
+
+    /* Style for the text box */
+    .textbox {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   </style>
 </head>
 <body>
 
-<div class="rectangle" onclick="toggleColor(this)"></div>
+<div class="rectangle-container">
+  <!-- Repeat this div block for each rectangle -->
+  <div class="rectangle" onclick="toggleColor(this)">
+    <div class="textbox">
+      <input type="text" placeholder="Enter text">
+    </div>
+  </div>
+  <!-- End of div block -->
+</div>
 
 <script>
   function toggleColor(element) {
